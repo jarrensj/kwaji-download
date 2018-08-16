@@ -1,0 +1,14 @@
+<p>
+  retrieve works!
+</p>
+
+<form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)" class = "form">
+  id:
+  <input
+    type = "text"
+    [(ngModel)] = "postId"
+    name = "text"
+    required
+  > <br>
+  <input type="submit" [disabled]="!form.valid" value="get mp3">
+</form>
