@@ -8,6 +8,9 @@ def lambda_handler(event, context):
     voice = event["voice"]
     text = event["text"]
 
+    if len(text) > int(os.environ['CHARACTER_LIMIT']):
+        return "exceeded character limit"
+
     print('Generating new DynamoDB record, with ID: ' + recordId)
     print('Input Text: ' + text)
     print('Selected voice: ' + voice)
