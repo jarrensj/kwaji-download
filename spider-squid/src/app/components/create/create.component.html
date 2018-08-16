@@ -1,0 +1,19 @@
+<form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)" class = "form">
+  voice:
+  <input
+    type = "text"
+    [(ngModel)] = "voice"
+    name = "voice"
+    required
+  > <br>
+  text:
+  <input
+    type = "text"
+    [(ngModel)] = "text"
+    name = "text"
+    required
+  > <br>
+  <input type="submit" [disabled]="!form.valid" value="generate mp3">
+</form>
+
+{{postId}}
