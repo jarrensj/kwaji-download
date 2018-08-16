@@ -8,17 +8,19 @@ import { RetrieveService } from '../../services/retrieve.service';
 })
 export class RetrieveComponent implements OnInit {
   postId: string;
+  link: string;
+  text: string;
+
   constructor(private retrieveService: RetrieveService) { }
 
   ngOnInit() {
   }
 
   onSubmit({value, valid}:{value:any, valid:boolean}){
-    console.log("postId: " + this.postId);
     this.retrieveService.retrieve(this.postId).subscribe((res) => {
       if(res){
-        console.log(res);
-        
+        this.link = res[0].url
+        this.text = res[0].text
       }
     });
 

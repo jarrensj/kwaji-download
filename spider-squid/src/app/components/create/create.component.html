@@ -20,4 +20,6 @@
   <input type="submit" [disabled]="!form.valid" value="generate mp3">
 </form>
 
-{{postId}}
+<div *ngIf = "postId">
+  retrieve with: {{postId}}
+</div>

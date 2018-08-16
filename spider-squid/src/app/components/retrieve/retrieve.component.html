@@ -12,3 +12,8 @@
   > <br>
   <input type="submit" [disabled]="!form.valid" value="get mp3">
 </form>
+
+<div *ngIf = "link">
+  text: {{text}} <br>
+  <audio controls><source src='{{link}}' type='audio/mpeg'></audio>
+</div>
