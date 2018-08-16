@@ -18,11 +18,8 @@ export class CreateComponent implements OnInit {
   }
 
   onSubmit({value, valid}:{value:any, valid:boolean}){
-    console.log("text: " + this.text);
-    console.log("voice: " + this.voice);
     this.createService.create(this.text, this.voice).subscribe((res) => {
       if(res){
-        console.log(res);
         this.postId = res;
       }
     });

@@ -1,25 +1,26 @@
 <p>
-  create works!
+  text to speech!
 </p>
 
 <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)" class = "form">
-  voice:
+  voice: <br>
   <input
     type = "text"
     [(ngModel)] = "voice"
     name = "voice"
     required
   > <br>
-  text:
-  <input
+  text: <br>
+  <textarea rows="4" cols="50"
     type = "text"
     [(ngModel)] = "text"
     name = "text"
     required
-  > <br>
+  ></textarea> <br>
   <input type="submit" [disabled]="!form.valid" value="generate mp3">
 </form>
 
 <div *ngIf = "postId">
-  retrieve with: {{postId}}
+  retrieve with: <br>
+  <strong>{{postId}}</strong>
 </div>

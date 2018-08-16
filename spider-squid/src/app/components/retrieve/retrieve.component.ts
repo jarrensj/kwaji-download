@@ -17,6 +17,8 @@ export class RetrieveComponent implements OnInit {
   }
 
   onSubmit({value, valid}:{value:any, valid:boolean}){
+    this.link = "";
+    this.text = "";
     this.retrieveService.retrieve(this.postId).subscribe((res) => {
       if(res){
         this.link = res[0].url
