@@ -3,13 +3,13 @@
 </p>
 
 <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)" class = "form">
-  voice: <br>
-  <input
-    type = "text"
-    [(ngModel)] = "voice"
-    name = "voice"
-    required
-  > <br>
+  voice:
+  <select name="voice" [(ngModel)] = "voice" required>
+      <option *ngFor = "let v of voiceOptions" value="{{v.name}}">
+        {{v.name}} [{{v.language}}]
+      </option>
+    </select>
+  <br>
   text: <br>
   <textarea rows="4" cols="50"
     type = "text"
