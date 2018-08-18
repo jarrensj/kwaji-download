@@ -241,6 +241,15 @@ export class CreateComponent implements OnInit {
 
   }
 
+  copy() {
+    let el = document.createElement('textarea');
+    el.value = this.postId;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand('copy');
+    document.body.removeChild(el);
+  }
+
 }
 
 interface voiceOption {

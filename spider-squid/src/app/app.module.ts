@@ -9,13 +9,15 @@ import { RetrieveComponent } from './components/retrieve/retrieve.component';
 
 import { CreateService } from './services/create.service';
 import { RetrieveService } from './services/retrieve.service';
+import { LogoComponent } from './components/logo/logo.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     CreateComponent,
-    RetrieveComponent
+    RetrieveComponent,
+    LogoComponent
   ],
   imports: [
     BrowserModule,

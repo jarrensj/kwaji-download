@@ -1,26 +1,23 @@
-<p>
-  text to speech!
-</p>
-
 <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)" class = "form">
-  voice:
-  <select name="voice" [(ngModel)] = "voice" required>
-      <option *ngFor = "let v of voiceOptions" value="{{v.name}}">
-        {{v.name}} [{{v.language}}]
-      </option>
-    </select>
-  <br>
-  text: <br>
+  type/paste text below: <br>
   <textarea rows="4" cols="50"
     type = "text"
     [(ngModel)] = "text"
     name = "text"
     required
   ></textarea> <br>
+  choose voice: <br>
+  <select name="voice" [(ngModel)] = "voice" required>
+      <option *ngFor = "let v of voiceOptions" value="{{v.name}}">
+        {{v.name}} [{{v.language}}]
+      </option>
+    </select>
+  <br>
   <input type="submit" [disabled]="!form.valid" value="generate mp3">
 </form>
 
 <div *ngIf = "postId">
   retrieve with: <br>
-  <strong>{{postId}}</strong>
+  <strong><div id="postId">{{postId}}</div></strong>
+  <button (click) = "copy()">copy to clipboard</button>
 </div>
