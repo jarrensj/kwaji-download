@@ -238,6 +238,7 @@ export class CreateComponent implements OnInit {
         this.postId = res;
       }
     });
+    this.text = "";
 
   }
 
