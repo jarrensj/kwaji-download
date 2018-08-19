@@ -14,6 +14,9 @@
 </form>
 
 <div *ngIf = "link">
+  <div *ngIf = "status == 'PROCESSING'">
+    {{postId}} is still processing. Please try again in a bit.
+  </div>
   text: {{text}} <br>
   <audio controls><source src='{{link}}' type='audio/mpeg'></audio>
 </div>

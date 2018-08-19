@@ -10,6 +10,7 @@ export class RetrieveComponent implements OnInit {
   postId: string;
   link: string;
   text: string;
+  status: string;
 
   constructor(private retrieveService: RetrieveService) { }
 
@@ -21,6 +22,7 @@ export class RetrieveComponent implements OnInit {
     this.text = "";
     this.retrieveService.retrieve(this.postId).subscribe((res) => {
       if(res){
+        this.status = res[0].status 
         this.link = res[0].url
         this.text = res[0].text
       }
