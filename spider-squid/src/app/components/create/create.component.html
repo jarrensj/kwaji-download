@@ -1,9 +1,11 @@
 <form novalidate #form="ngForm" (ngSubmit)="onSubmit(form)" class = "form">
-  type/paste text below: <br>
-  <textarea rows="10" cols="88"
+  type the text that you want converted below: <br>
+  <textarea rows="10" cols="50"
     type = "text"
     [(ngModel)] = "text"
     name = "text"
+    placeholder = "type text here"
+    autofocus
     required
   ></textarea> <br>
   choose voice: <br>
